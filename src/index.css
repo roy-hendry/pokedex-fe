@@ -15,7 +15,7 @@ body{
 }
 .card{
     width: 100%;
-    max-width: fit-content;
+    min-width: fit-content;
     background-color:#9EDEF9;
     border-radius: 1rem;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
@@ -26,8 +26,7 @@ body{
     box-sizing: border-box;
 }
 .card img{
-    margin: 1rem;
-    width: flex;
+    width: fit-content;
     height: 100%;
 }
 .left-content{
@@ -54,8 +53,7 @@ body{
     right: 10px;
 }
 .right-content img{
-    width:max-content;
-    min-width: fit-content;
+    min-width: 300px;
 }
 .right-content h1{
     text-transform: uppercase;
@@ -79,7 +77,8 @@ body{
     margin-left: 1rem;
 }
 .base-stat{
-    margin-top: 2rem;
+    margin-top: 1rem;
+    min-width: fit-content;
 }
 .btn-group{
     display: flex;
