@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
+import { getAllPokemon } from "../services/pokemonServices";
 import Card from "../components/Card";
 import PokemonInfo from "../components/PokemonInfo";
 
-function LandingPage() {
+const LandingPage = () => {
+	const [loading, setLoading] = useState(false);
+
+	const grabEmAll = async () => {
+		setLoading(true);
+		getAllPokemon();
+	};
+
+	useEffect(() => {
+		grabEmAll();
+	}, []);
+
 	return (
 		<>
 			<h1>Landing Page!</h1>
@@ -22,6 +35,6 @@ function LandingPage() {
 			</div>
 		</>
 	);
-}
+};
 
 export default LandingPage;
