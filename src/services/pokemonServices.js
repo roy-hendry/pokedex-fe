@@ -2,18 +2,28 @@ import axios from "axios";
 
 export const getAllPokemon = async () => {
 	const response = await axios.get(
-		"https://pokeapi.co/api/v2/pokemon?limit=9&offset=0"
+		"https://pokeapi.co/api/v2/pokemon?limit=9"
 	);
-	// console.log(response.data.results);
-	getPokemonUrls(response.data.results);
-	return response;
-};
 
-export const getPokemonUrls = async (pokemonArray) => {
+	const pokemonArray = response.data.results;
+
 	let pokemonUrls = [];
 	for (let i = 0; i < pokemonArray.length; i++) {
 		pokemonUrls.push(pokemonArray[i].url);
-		console.log(pokemonArray);
+		// console.log(pokemonArray[i].url);
 	}
-	console.log(pokemonUrls);
+
+	return pokemonUrls;
+};
+
+export const getPokemonUrls = async () => {
+	let pokemonUrls = [];
+	const pokemonArray = getAllPokemon();
+	console.log(getAllPokemon());
+	for (let i = 0; i < pokemonArray.length; i++) {
+		pokemonUrls.push(pokemonArray[i].url);
+		// console.log(pokemonArray);
+	}
+	// console.log(pokemonUrls);
+	// console.log(getAllPokemon());
 };
