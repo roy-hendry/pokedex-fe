@@ -1,4 +1,4 @@
-const PokemonInfo = () => {
+function PokemonInfo() {
 	return (
 		<div className="card">
 			<h1>Pokemon</h1>
@@ -22,6 +22,6 @@ const PokemonInfo = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default PokemonInfo;

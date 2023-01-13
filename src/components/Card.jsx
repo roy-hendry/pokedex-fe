@@ -1,14 +1,11 @@
-const Card = () => {
+function Card({ pokemonId, pokemonName, spriteUrl }) {
 	return (
 		<div className="card">
-			<h2>123</h2>
-			<h2>Pokemon</h2>
-			<img
-				src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
-				alt=""
-			/>
+			<h2>{pokemonId}</h2>
+			<h2>{pokemonName}</h2>
+			<img src={spriteUrl} alt="" />
 		</div>
 	);
-};
+}
 
 export default Card;

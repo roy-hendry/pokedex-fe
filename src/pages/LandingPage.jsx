@@ -17,44 +17,56 @@ const LandingPage = () => {
 		const response = await axios.get(url);
 
 		let pokemonArray = response.data.results;
-		// console.log("let pokemonArray:");
-		// console.log(pokemonArray);
 
 		let pokemonUrls = [];
 		for (let i = 0; i < pokemonArray.length; i++) {
 			pokemonUrls.push(pokemonArray[i].url);
 		}
-
-		// console.log(response.data.results);
-		// console.log("response.data");
-		// console.log(response.data);
-		getAllPokemon(response);
+		grabAllPokemonData(pokemonArray);
 
 		return pokemonUrls;
 	};
 
-	const getAllPokemon = async (response) => {
+	const grabAllPokemonData = async (pokemonArray) => {
 		let tempArray = [];
-		response.data.results.map(async (item) => {
-			const result = await axios.get(item.url);
+		pokemonArray.map(async (pokemon) => {
+			const result = await axios.get(pokemon.url);
 			tempArray.push(result.data);
-			// result.sort((a, b) => (a.id > b.id ? 1 : -1));
-			console.log(result);
+			// console.log(result);
 			// setAllPokemonData(allPokemonData.map());
 		});
-		tempArray.sort((a, b) => (a.id > b.id ? 1 : -1));
-		console.log("tempArray");
+		// tempArray.sort((a, b) => (a.id > b.id ? 1 : -1));
+
+		// console.log("tempArray");
+		// console.log(tempArray);
+
+		setAllPokemonData(tempArray);
+
+		console.log("allPokemonData");
+		console.log(allPokemonData[0]);
+
+		getPokemonSprites(allPokemonData);
+	};
+
+	const getPokemonSprites = (allPokemonData) => {
+		let tempArray = [];
+		for (let i = 0; i < allPokemonData.length; i++) {
+			tempArray.push(allPokemonData[i].sprites.front_default);
+		}
+		setAllPokemonSprites(tempArray);
 		console.log(tempArray);
 	};
 
 	useEffect(() => {
 		getPokemonFunction();
-		// console.log(allPokemonData);
+		console.log(allPokemonData[0]);
 	}, []);
 
 	return (
 		<>
 			<h1>Landing Page!</h1>
+			<h1>{allPokemonSprites[0]}</h1>
+			{/* <h1>{allPokemonData.name}</h1> */}
 			<div className="container">
 				<div className="left-content">
 					<Card />
