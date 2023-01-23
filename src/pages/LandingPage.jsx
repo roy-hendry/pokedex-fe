@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { getAllPokemon, getPokemonUrls } from "../services/pokemonServices";
+import {
+	getPokemonFunction,
+	grabAllPokemonData,
+} from "../services/pokemonServices";
 import Card from "../components/Card";
 import PokemonInfo from "../components/PokemonInfo";
 
@@ -8,6 +11,7 @@ const LandingPage = () => {
 	const [loading, setLoading] = useState(false);
 	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=9");
 	const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+	const [visiblePokemonData, setVisiblePokemonData] = useState({});
 	const [allPokemonData, setAllPokemonData] = useState([]);
 
 	const getPokemonFunction = async () => {
@@ -21,9 +25,6 @@ const LandingPage = () => {
 		pokemonArray.map(async (item) => {
 			const result = await axios.get(item.url);
 			setAllPokemonData((state) => {
-				console.log("state.length");
-				console.log(state.length);
-
 				// This is made purely to fix the mounting issue where calls are made twice - Only really an issue in React Strictmode
 				if (state.length >= pokemonArray.length) {
 					state.sort((a, b) => (a.id > b.id ? 1 : -1));
@@ -31,22 +32,34 @@ const LandingPage = () => {
 				}
 				state = [...state, result.data];
 
-				// console.log("result.data");
-				// console.log(result.data);
 				state.sort((a, b) => (a.id > b.id ? 1 : -1));
 				return state;
 			});
 		});
 	};
 
-	useEffect(() => {
-		setAllPokemonData([]);
-		getPokemonFunction();
-		// console.log("allPokemonData");
-		// console.log(allPokemonData);
+	const tempMain = async () => {
+		setVisiblePokemonData(await getPokemonFunction(url));
+		console.log("visiblePokemonData");
+		console.log(visiblePokemonData);
+		console.log("visiblePokemonData[0]");
+		console.log(visiblePokemonData[0]);
 
-		// console.log("allPokemonData[3]");
-		// console.log(allPokemonData[3]);
+		setAllPokemonData(await grabAllPokemonData(visiblePokemonData));
+		// console.log("await grabAllPokemonData(visiblePokemonData)");
+		// console.log(await grabAllPokemonData(visiblePokemonData));
+
+		// console.log("await grabAllPokemonData(visiblePokemonData)");
+		// console.log(await grabAllPokemonData(visiblePokemonData));
+	};
+
+	useEffect(() => {
+		setLoading(true);
+		setAllPokemonData([]);
+		// tempMain();
+
+		getPokemonFunction();
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [url]);
 
