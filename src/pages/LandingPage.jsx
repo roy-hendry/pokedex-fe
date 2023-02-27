@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {
-	getPokemonFunction,
+	getPokemonData,
 	grabAllPokemonData,
 } from "../services/pokemonServices";
 import Card from "../components/Card";
@@ -9,77 +9,57 @@ import PokemonInfo from "../components/PokemonInfo";
 
 const LandingPage = () => {
 	const [loading, setLoading] = useState(false);
-	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=9");
-	const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
-	const [visiblePokemonData, setVisiblePokemonData] = useState({});
+	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=150");
+	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
 	const [allPokemonData, setAllPokemonData] = useState([]);
 
-	const getPokemonFunction = async () => {
-		setLoading(true);
-		const response = await axios.get(url);
+	const getPokemonData = async () => {
+		const nameResponse = await axios.get(
+			"https://pokeapi.co/api/v2/pokemon?limit=151"
+		);
+		const pokemonCompleteList = [];
+		const nameList = nameResponse.data.results;
 
-		grabAllPokemonData(response.data.results);
-	};
+		for (let i = 0; i < nameList.length; i++) {
+			const pokemonResponse = await axios.get(nameList[i].url);
 
-	const grabAllPokemonData = async (pokemonArray) => {
-		pokemonArray.map(async (item) => {
-			const result = await axios.get(item.url);
-			setAllPokemonData((state) => {
-				// This is made purely to fix the mounting issue where calls are made twice - Only really an issue in React Strictmode
-				if (state.length >= pokemonArray.length) {
-					state.sort((a, b) => (a.id > b.id ? 1 : -1));
-					return state;
-				}
-				state = [...state, result.data];
-
-				state.sort((a, b) => (a.id > b.id ? 1 : -1));
-				return state;
-			});
-		});
-	};
-
-	const tempMain = async () => {
-		setVisiblePokemonData(await getPokemonFunction(url));
-		console.log("visiblePokemonData");
-		console.log(visiblePokemonData);
-		console.log("visiblePokemonData[0]");
-		console.log(visiblePokemonData[0]);
-
-		setAllPokemonData(await grabAllPokemonData(visiblePokemonData));
-		// console.log("await grabAllPokemonData(visiblePokemonData)");
-		// console.log(await grabAllPokemonData(visiblePokemonData));
-
-		// console.log("await grabAllPokemonData(visiblePokemonData)");
-		// console.log(await grabAllPokemonData(visiblePokemonData));
+			pokemonCompleteList.push(pokemonResponse.data);
+		}
+		console.log(pokemonCompleteList);
+		setAllPokemonData(pokemonCompleteList);
+		setLoading(false);
 	};
 
 	useEffect(() => {
 		setLoading(true);
-		setAllPokemonData([]);
+		getPokemonData();
+		// setAllPokemonData([]);
 		// tempMain();
 
-		getPokemonFunction();
+		// getPokemonFunction();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [url]);
+	}, []);
 
 	return (
 		<>
 			<h1>Landing Page!</h1>
-			<div className="container">
-				<div className="left-content">
-					{allPokemonData.map((item) => {
-						return (
-							<div key={item.id}>
-								<Card pokemonData={item} />
-							</div>
-						);
-					})}
+			{!loading && (
+				<div className="container">
+					<div className="left-content">
+						{allPokemonData.map((item) => {
+							return (
+								<div key={item.id}>
+									<Card pokemonData={item} />
+								</div>
+							);
+						})}
+					</div>
+					<div className="right-content">
+						<PokemonInfo />
+					</div>
 				</div>
-				<div className="right-content">
-					<PokemonInfo />
-				</div>
-			</div>
+			)}
 		</>
 	);
 };
