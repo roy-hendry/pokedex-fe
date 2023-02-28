@@ -13,30 +13,30 @@ const LandingPage = () => {
 	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
 	const [allPokemonData, setAllPokemonData] = useState([]);
 
-	const getPokemonData = async () => {
-		const nameResponse = await axios.get(
-			"https://pokeapi.co/api/v2/pokemon?limit=151"
-		);
-		const pokemonCompleteList = [];
-		const nameList = nameResponse.data.results;
+	// const getPokemonData = async () => {
+	// 	const nameResponse = await axios.get(
+	// 		"https://pokeapi.co/api/v2/pokemon?limit=151"
+	// 	);
+	// 	const pokemonCompleteList = [];
+	// 	const nameList = nameResponse.data.results;
 
-		for (let i = 0; i < nameList.length; i++) {
-			const pokemonResponse = await axios.get(nameList[i].url);
+	// 	for (let i = 0; i < nameList.length; i++) {
+	// 		const pokemonResponse = await axios.get(nameList[i].url);
 
-			pokemonCompleteList.push(pokemonResponse.data);
-		}
-		console.log(pokemonCompleteList);
-		setAllPokemonData(pokemonCompleteList);
-		setLoading(false);
-	};
+	// 		pokemonCompleteList.push(pokemonResponse.data);
+	// 	}
+	// 	console.log("pokemonCompleteList type of:", typeof pokemonCompleteList);
+	// 	setAllPokemonData(pokemonCompleteList);
+	// 	setLoading(false);
+	// };
 
 	useEffect(() => {
 		setLoading(true);
-		getPokemonData();
-		// setAllPokemonData([]);
-		// tempMain();
-
-		// getPokemonFunction();
+		getPokemonData().then((response) => {
+			setAllPokemonData(response);
+			setLoading(false);
+		});
+		// getPokemonData();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
