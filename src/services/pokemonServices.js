@@ -9,9 +9,7 @@ export const getPokemonData = async () => {
 
 	for (let i = 0; i < nameList.length; i++) {
 		const pokemonResponse = await axios.get(nameList[i].url);
-
 		pokemonCompleteList.push(pokemonResponse.data);
 	}
-	// console.log(pokemonCompleteList);
 	return pokemonCompleteList;
 };

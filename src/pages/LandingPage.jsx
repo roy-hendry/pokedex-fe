@@ -1,34 +1,12 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-	getPokemonData,
-	grabAllPokemonData,
-} from "../services/pokemonServices";
-import Card from "../components/Card";
+import { getPokemonData } from "../services/pokemonServices";
 import PokemonInfo from "../components/PokemonInfo";
+import PokemonList from "../components/PokemonList";
+import Card from "../components/Card";
 
 const LandingPage = () => {
 	const [loading, setLoading] = useState(false);
-	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=150");
-	// const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
 	const [allPokemonData, setAllPokemonData] = useState([]);
-
-	// const getPokemonData = async () => {
-	// 	const nameResponse = await axios.get(
-	// 		"https://pokeapi.co/api/v2/pokemon?limit=151"
-	// 	);
-	// 	const pokemonCompleteList = [];
-	// 	const nameList = nameResponse.data.results;
-
-	// 	for (let i = 0; i < nameList.length; i++) {
-	// 		const pokemonResponse = await axios.get(nameList[i].url);
-
-	// 		pokemonCompleteList.push(pokemonResponse.data);
-	// 	}
-	// 	console.log("pokemonCompleteList type of:", typeof pokemonCompleteList);
-	// 	setAllPokemonData(pokemonCompleteList);
-	// 	setLoading(false);
-	// };
 
 	useEffect(() => {
 		setLoading(true);
@@ -36,7 +14,6 @@ const LandingPage = () => {
 			setAllPokemonData(response);
 			setLoading(false);
 		});
-		// getPokemonData();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -47,13 +24,15 @@ const LandingPage = () => {
 			{!loading && (
 				<div className="container">
 					<div className="left-content">
-						{allPokemonData.map((item) => {
+						{/* {allPokemonData.map((item) => {
 							return (
 								<div key={item.id}>
 									<Card pokemonData={item} />
 								</div>
 							);
-						})}
+						})} */}
+						{/* console.log(pokemonData) */}
+						<PokemonList pokemonData={allPokemonData} />
 					</div>
 					<div className="right-content">
 						<PokemonInfo />
