@@ -1,11 +1,13 @@
-function PokemonInfo() {
+function PokemonInfo({ pokemonData }) {
+	console.log(pokemonData);
 	return (
 		<div className="card">
-			<h1>Pokemon</h1>
-			<img
-				src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
-				alt=""
-			/>
+			<div>
+				<h1>{pokemonData.id}</h1>
+				<br />
+				<h1>{pokemonData.name}</h1>
+			</div>
+			<img src={pokemonData.sprites.front_default} alt="Pokemon" />
 			<div className="abilities">
 				<div className="group">
 					<h2>Ability 1</h2>

@@ -47,6 +47,7 @@ body{
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
+    white-space: pre-line;
 }
 .right-content{
     width: 50%;
@@ -57,6 +58,7 @@ body{
     right: 50px;
 }
 .right-content img{
+    padding-left: 20px;
     min-width: 300px;
 }
 .right-content h1{
@@ -68,8 +70,7 @@ body{
     width: 70%;
     margin: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     margin-top: 1rem;
 }
 .abilities .group{
