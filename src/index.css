@@ -41,6 +41,7 @@ body{
 }
 .left-content img{
     min-width: fit-content;
+    min-height: 100px;
 }
 .left-content h1{
     text-transform: uppercase;
