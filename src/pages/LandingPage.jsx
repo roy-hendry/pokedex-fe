@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { getPokemonData } from "../services/pokemonServices";
 import PokemonInfo from "../components/PokemonInfo";
 import PokemonList from "../components/PokemonList";
-import { waitFor } from "@testing-library/react";
-import { wait } from "@testing-library/user-event/dist/utils";
 
 const LandingPage = () => {
 	const [loading, setLoading] = useState(false);
@@ -16,7 +14,6 @@ const LandingPage = () => {
 		getPokemonData().then((response) => {
 			setAllPokemonData(response);
 			setSelectedPokemon(response[2]);
-			console.log(response[0]);
 			setLoading(false);
 		});
 		// console.log(allPokemonData);
@@ -35,6 +32,7 @@ const LandingPage = () => {
 								(pageNumber - 1) * 20,
 								pageNumber * 20
 							)}
+							setSelectedPokemon={setSelectedPokemon}
 						/>
 						<div className="btn-group">
 							{pageNumber > 1 && (

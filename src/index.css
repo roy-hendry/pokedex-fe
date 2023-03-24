@@ -30,7 +30,7 @@ body{
     box-sizing: border-box;
 }
 .card img{
-    width: fit-content;
+    size: fit-content;
 }
 .left-content{
     flex-basis: 45%;
@@ -51,6 +51,8 @@ body{
 }
 .right-content{
     width: 50%;
+    min-width: 50rem;
+    height: 320px;
     text-align: center;
     color: black;
     position: fixed;
@@ -58,20 +60,23 @@ body{
     right: 50px;
 }
 .right-content img{
-    padding-left: 20px;
-    min-width: 300px;
+    position: fixed;
+    padding-left: 200px;
+    min-width: 350px;
 }
 .right-content h1{
+    position: fixed;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
 }
 .abilities{
-    width: 70%;
+    min-width: 200px;
     margin: auto;
+    margin-right: 10px;
+    margin-top: 1rem;
     display: flex;
 
-    margin-top: 1rem;
 }
 .abilities .group{
     background-color: #b74555;

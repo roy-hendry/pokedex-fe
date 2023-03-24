@@ -1,9 +1,9 @@
 import Card from "../components/Card";
 
-function PokemonList({ pokemonSubset }) {
+function PokemonList({ pokemonSubset, setSelectedPokemon }) {
 	return pokemonSubset.map((item) => (
 		<div key={item.id}>
-			<Card pokemonData={item} />
+			<Card pokemonData={item} setSelectedPokemon={setSelectedPokemon} />
 		</div>
 	));
 }
