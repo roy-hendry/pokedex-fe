@@ -18,10 +18,30 @@ function PokemonInfo({ pokemonData }) {
 					</div>
 				</div>
 				<div className="base-stat">
-					<h3>Stat 1</h3>
-					<h3>Stat 2</h3>
-					<h3>Stat 3</h3>
-					<h3>Stat 4</h3>
+					<h3>
+						{pokemonData.stats[0].stat.name} :{" "}
+						{pokemonData.stats[0].base_stat}
+					</h3>
+					<h3>
+						{pokemonData.stats[1].stat.name} :{" "}
+						{pokemonData.stats[1].base_stat}
+					</h3>
+					<h3>
+						{pokemonData.stats[2].stat.name} :{" "}
+						{pokemonData.stats[2].base_stat}
+					</h3>
+					<h3>
+						{pokemonData.stats[3].stat.name} :{" "}
+						{pokemonData.stats[3].base_stat}
+					</h3>
+					<h3>
+						{pokemonData.stats[4].stat.name} :{" "}
+						{pokemonData.stats[4].base_stat}
+					</h3>
+					<h3>
+						{pokemonData.stats[5].stat.name} :{" "}
+						{pokemonData.stats[5].base_stat}
+					</h3>
 				</div>
 			</div>
 		)
