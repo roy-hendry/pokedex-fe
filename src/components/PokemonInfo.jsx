@@ -11,10 +11,10 @@ function PokemonInfo({ pokemonData }) {
 				<img src={pokemonData.sprites.front_default} alt="Pokemon" />
 				<div className="abilities">
 					<div className="group">
-						<h2>Ability 1</h2>
+						<h2>{pokemonData.abilities[0].ability.name}</h2>
 					</div>
 					<div className="group">
-						<h2>Ability 2</h2>
+						<h2>{pokemonData.abilities[1].ability.name}</h2>
 					</div>
 				</div>
 				<div className="base-stat">

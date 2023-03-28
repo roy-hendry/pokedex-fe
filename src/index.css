@@ -51,7 +51,7 @@ body{
 }
 .right-content{
     width: 50%;
-    min-width: 50rem;
+    min-width: 55rem;
     height: 320px;
     text-align: center;
     color: black;
@@ -71,12 +71,11 @@ body{
     letter-spacing: 1px;
 }
 .abilities{
+    position: fixed;
     min-width: 200px;
-    margin: auto;
-    margin-right: 10px;
-    margin-top: 1rem;
-    display: flex;
-
+    margin-left: 6in;
+    margin-bottom: 15rem;
+    display:flex;
 }
 .abilities .group{
     background-color: #b74555;
