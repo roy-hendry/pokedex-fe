@@ -9,7 +9,7 @@ const LandingPage = () => {
 	const [pageNumber, setPageNumber] = useState(1);
 	const [selectedPokemon, setSelectedPokemon] = useState();
 
-	console.log(selectedPokemon);
+	// console.log(selectedPokemon);
 
 	useEffect(() => {
 		setLoading(true);
