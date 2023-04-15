@@ -1,23 +1,28 @@
 function PokemonInfo({ pokemonData }) {
-
 	let sqlInsertStatement = "";
 	const n =
 		pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
 
-	sqlInsertStatement += n + "\n";
-	sqlInsertStatement += pokemonData.sprites.front_default + "\n";
-	sqlInsertStatement += pokemonData.abilities[0].ability.name + "\n";
+	sqlInsertStatement += "'" + n + "',\n";
+	sqlInsertStatement += "'" + pokemonData.sprites.front_default + "',\n";
+	const a =
+		pokemonData.abilities[0].ability.name.charAt(0).toUpperCase() +
+		pokemonData.abilities[0].ability.name.slice(1);
+	sqlInsertStatement += "'" + a + "',\n";
 	if (pokemonData.abilities.length > 1) {
-		sqlInsertStatement += pokemonData.abilities[1].ability.name + "\n";
+		const b =
+			pokemonData.abilities[1].ability.name.charAt(0).toUpperCase() +
+			pokemonData.abilities[1].ability.name.slice(1);
+		sqlInsertStatement += "'" + b + "',\n";
 	} else {
-		sqlInsertStatement += "\n";
+		sqlInsertStatement += ",\n";
 	}
-	sqlInsertStatement += pokemonData.stats[0].base_stat + "\n";
-	sqlInsertStatement += pokemonData.stats[1].base_stat + "\n";
-	sqlInsertStatement += pokemonData.stats[2].base_stat + "\n";
-	sqlInsertStatement += pokemonData.stats[3].base_stat + "\n";
-	sqlInsertStatement += pokemonData.stats[4].base_stat + "\n";
-	sqlInsertStatement += pokemonData.stats[5].base_stat + "\n";
+	sqlInsertStatement += pokemonData.stats[0].base_stat + ",\n";
+	sqlInsertStatement += pokemonData.stats[1].base_stat + ",\n";
+	sqlInsertStatement += pokemonData.stats[2].base_stat + ",\n";
+	sqlInsertStatement += pokemonData.stats[3].base_stat + ",\n";
+	sqlInsertStatement += pokemonData.stats[4].base_stat + ",\n";
+	sqlInsertStatement += pokemonData.stats[5].base_stat;
 
 	console.log(sqlInsertStatement);
 
