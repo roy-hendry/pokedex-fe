@@ -24,22 +24,7 @@ function PokemonInfo({ pokemonData }) {
 	sqlInsertStatement += pokemonData.stats[4].base_stat + ",\n";
 	sqlInsertStatement += pokemonData.stats[5].base_stat;
 
-	console.log(sqlInsertStatement);
-
-	// console.log(pokemonData.name);
-	// console.log(pokemonData.sprites.front_default);
-	// console.log(pokemonData.abilities[0].ability.name);
-	// if (pokemonData.abilities.length > 1) {
-	// 	console.log(pokemonData.abilities[1].ability.name);
-	// } else {
-	// 	console.log("");
-	// }
-	// console.log(pokemonData.stats[0].base_stat);
-	// console.log(pokemonData.stats[1].base_stat);
-	// console.log(pokemonData.stats[2].base_stat);
-	// console.log(pokemonData.stats[3].base_stat);
-	// console.log(pokemonData.stats[4].base_stat);
-	// console.log(pokemonData.stats[5].base_stat);
+	// console.log(sqlInsertStatement);
 
 	return (
 		pokemonData && (

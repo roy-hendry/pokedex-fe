@@ -4,21 +4,17 @@ import PokemonInfo from "../components/PokemonInfo";
 import PokemonList from "../components/PokemonList";
 
 const LandingPage = () => {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [allPokemonData, setAllPokemonData] = useState([]);
 	const [pageNumber, setPageNumber] = useState(1);
 	const [selectedPokemon, setSelectedPokemon] = useState();
 
-	// console.log(selectedPokemon);
-
 	useEffect(() => {
-		setLoading(true);
 		getPokemonData().then((response) => {
 			setAllPokemonData(response);
 			setSelectedPokemon(response[2]);
 			setLoading(false);
 		});
-		// console.log(allPokemonData);
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -26,6 +22,8 @@ const LandingPage = () => {
 	return (
 		<>
 			<h1>Landing Page!</h1>
+			{loading && <p>Loading...</p>}
+
 			{!loading && (
 				<div className="container">
 					<div className="left-content">

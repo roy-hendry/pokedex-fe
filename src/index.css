@@ -44,10 +44,13 @@ body{
     min-height: 100px;
 }
 .left-content h1{
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
     letter-spacing: 1px;
     white-space: pre-line;
+}
+.left-content h2{
+    text-transform: capitalize;
 }
 .right-content{
     width: 50%;
@@ -66,11 +69,12 @@ body{
 }
 .right-content h1{
     position: fixed;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
     letter-spacing: 1px;
 }
 .abilities{
+    text-transform: capitalize;
     position: fixed;
     min-width: 200px;
     margin-left: 6in;
