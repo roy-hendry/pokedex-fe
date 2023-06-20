@@ -25,6 +25,7 @@ function PokemonInfo({ pokemonData }) {
 	sqlInsertStatement += pokemonData.stats[5].base_stat;
 
 	// console.log(sqlInsertStatement);
+	const paddedId = pokemonData.id.toString().padStart(3, "0");
 
 	return (
 		pokemonData && (
@@ -35,7 +36,10 @@ function PokemonInfo({ pokemonData }) {
 					<br />
 					<h1>{pokemonData.name}</h1>
 				</div>
-				<img src={pokemonData.sprites.front_default} alt="Pokemon" />
+				<img
+					src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${paddedId}.png`}
+					alt="Pokemon"
+				/>
 				<div className="abilities">
 					<div className="group">
 						<h2>{pokemonData.abilities[0].ability.name}</h2>

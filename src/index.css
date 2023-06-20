@@ -30,7 +30,7 @@ body{
     box-sizing: border-box;
 }
 .card img{
-    size: fit-content;
+    max-width: fit-content;
 }
 .left-content{
     flex-basis: 45%;
@@ -65,7 +65,7 @@ body{
 .right-content img{
     position: fixed;
     padding-left: 200px;
-    min-width: 350px;
+    max-height: 300px;
 }
 .right-content h1{
     position: fixed;
@@ -77,7 +77,7 @@ body{
     text-transform: capitalize;
     position: fixed;
     min-width: 200px;
-    margin-left: 6in;
+    margin-left: 5.5in;
     margin-bottom: 15rem;
     display:flex;
 }
