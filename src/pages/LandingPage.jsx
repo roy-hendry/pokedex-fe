@@ -37,6 +37,7 @@ const LandingPage = () => {
 						<div className="btn-group">
 							{pageNumber > 1 && (
 								<button
+									id="previousButton"
 									onClick={() => {
 										setPageNumber(pageNumber - 1);
 									}}
@@ -47,6 +48,7 @@ const LandingPage = () => {
 
 							{pageNumber < 8 && (
 								<button
+									id="nextButton"
 									onClick={() => {
 										setPageNumber(pageNumber + 1);
 									}}
