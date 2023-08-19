@@ -26,7 +26,7 @@ const LandingPage = () => {
 
 			{!loading && (
 				<div className="container">
-					<div className="left-content">
+					<div className="pokemon-list-container">
 						<PokemonList
 							pokemonSubset={allPokemonData.slice(
 								(pageNumber - 1) * 20,

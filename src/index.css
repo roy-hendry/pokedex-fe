@@ -37,26 +37,18 @@ body{
     box-sizing: border-box;
 }
 .card img{
-    max-width: fit-content;
+    max-width: 500px;
 }
-.left-content{
-    flex-basis: 45%;
+.pokemon-list-container{
+    flex-basis: 43%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(340px,0.3fr));
-    grid-gap:1rem;
-    padding-bottom: 150px;
+    grid-gap:0.75rem;
 }
-.left-content img{
+.pokemon-list-container img{
     min-width: fit-content;
     min-height: 100px;
 }
-.left-content h1{
-    text-transform: capitalize;
-    font-weight: bold;
-    letter-spacing: 1px;
-    white-space: pre-line;
-}
-.left-content h2{
+.pokemon-list-container h2{
     text-transform: capitalize;
 }
 .right-content{
