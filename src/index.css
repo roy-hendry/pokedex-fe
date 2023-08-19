@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@font-face{
+    font-family: "pokemon-gb";
+    src: url("assets/fonts/Pokemon-GB.ttf");
+}
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "pokemon-gb";
+    font-size: medium;
+
 }
 article {
     overflow-anchor: [auto ];
