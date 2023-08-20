@@ -1,7 +1,7 @@
 function Card({ pokemonData, setSelectedPokemon }) {
 	return (
 		<div
-			className="card"
+			className="list-item"
 			onClick={() => {
 				setSelectedPokemon(pokemonData);
 			}}
