@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getPokemonData } from "../services/pokemonServices";
 import PokemonInfo from "../components/PokemonInfo";
 import PokemonList from "../components/PokemonList";
+// import pokeball from "../assets/poke_ball_icon.svg";
 
 const LandingPage = () => {
 	const [loading, setLoading] = useState(true);
