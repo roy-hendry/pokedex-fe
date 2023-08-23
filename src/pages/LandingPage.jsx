@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getPokemonData } from "../services/pokemonServices";
 import PokemonInfo from "../components/PokemonInfo";
 import PokemonList from "../components/PokemonList";
-// import pokeball from "../assets/poke_ball_icon.svg";
+import pokemonLogo from "../assets/pokemon_logo.png";
 
 const LandingPage = () => {
 	const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ const LandingPage = () => {
 
 	return (
 		<>
-			<h1>Landing Page!</h1>
+			<img className="pokemonLogo" src={pokemonLogo} alt="pokemonLogo" />
 			{loading && <p>Loading...</p>}
 
 			{!loading && (
