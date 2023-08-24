@@ -59,7 +59,7 @@ const LandingPage = () => {
 							)}
 						</div>
 					</div>
-					<div className="right-content">
+					<div className="info-container">
 						<PokemonInfo pokemonData={selectedPokemon} />
 					</div>
 				</div>

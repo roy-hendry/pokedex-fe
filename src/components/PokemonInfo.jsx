@@ -54,22 +54,22 @@ function PokemonInfo({ pokemonData }) {
 				</div>
 				<div className="base-stat">
 					<h3>
-						{"HP"} : {pokemonData.hp}
+						{"HP"}: {pokemonData.hp}
 					</h3>
 					<h3>
-						{"Attack"} : {pokemonData.attack}
+						{"Attack"}: {pokemonData.attack}
 					</h3>
 					<h3>
-						{"Defence"} : {pokemonData.defence}
+						{"Defence"}: {pokemonData.defence}
 					</h3>
 					<h3>
-						{"Special-Attack"} : {pokemonData.specialAttack}
+						{"Special-Attack"}: {pokemonData.specialAttack}
 					</h3>
 					<h3>
-						{"Special-Defence"} : {pokemonData.specialDefence}
+						{"Special-Defence"}: {pokemonData.specialDefence}
 					</h3>
 					<h3>
-						{"Speed"} : {pokemonData.speed}
+						{"Speed"}: {pokemonData.speed}
 					</h3>
 				</div>
 			</div>
