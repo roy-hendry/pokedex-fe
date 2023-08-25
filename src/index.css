@@ -42,6 +42,7 @@ body{
     border-radius: 4rem;
     border-style: solid;
     border-color: #333;
+    border-width: 5px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
     padding: 0 5px;
     display: flex;
@@ -75,7 +76,8 @@ body{
     height: 100%;
     min-width: fit-content;
     background-color:#9EDEF9;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
+    border-width: 5px;
     border-style: solid;
     border-color: #333;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
@@ -102,8 +104,8 @@ body{
     text-transform: capitalize;
     position: fixed;
     min-width: 200px;
-    margin-left: 5.5in;
-    margin-bottom: 15rem;
+    right: 4.5rem;
+    top: 12rem;
     display:flex;
 }
 .abilities .group{
@@ -111,10 +113,10 @@ body{
     color: white;
     padding: 0.5rem;
     font-size: 12px;
-    border-radius: 8px;
+    border-radius: 13px;
     border-style: solid;
     border-color: #333;
-    border: 0 10px;
+    border-width: 3px;
     margin-left: 1rem;
 }
 .base-stat{
@@ -122,7 +124,6 @@ body{
     min-width: fit-content;
     text-transform: capitalize;
     font-weight: bold;
-    letter-spacing: px;
     text-align: end;
 }
 .btn-group button{
