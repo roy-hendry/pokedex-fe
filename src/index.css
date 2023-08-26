@@ -88,9 +88,10 @@ body{
     box-sizing: border-box;
 }
 .card img{
+    max-width: 370px;
     position: fixed;
-    right: 25rem;
-    top: 200px;
+    right: 30rem;
+    top: 250px;
 }
 .card h1{
     text-transform: uppercase;
@@ -100,8 +101,12 @@ body{
     letter-spacing: 5px;
     margin-top: 1rem;
 }
+.card h2{
+    font-size: 15px;
+}
 .abilities{
     text-transform: capitalize;
+    font-size: small;
     position: fixed;
     min-width: 200px;
     right: 4.5rem;
@@ -112,12 +117,11 @@ body{
     background-color: #b74555;
     color: white;
     padding: 0.5rem;
-    font-size: 12px;
     border-radius: 13px;
     border-style: solid;
     border-color: #333;
     border-width: 3px;
-    margin-left: 1rem;
+    margin-left: 7px;
 }
 .base-stat{
     margin-top: 18rem;
