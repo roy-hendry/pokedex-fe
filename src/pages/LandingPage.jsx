@@ -29,13 +29,10 @@ const LandingPage = () => {
 				<div className="container">
 					<div className="pokemon-list-container">
 						<PokemonList
-							pokemonSubset={allPokemonData.slice(
-								(pageNumber - 1) * 20,
-								pageNumber * 20
-							)}
+							allPokemon={allPokemonData}
 							setSelectedPokemon={setSelectedPokemon}
 						/>
-						<div className="btn-group">
+						{/* <div className="btn-group">
 							{pageNumber > 1 && (
 								<button
 									id="previousButton"
@@ -57,7 +54,7 @@ const LandingPage = () => {
 									Next
 								</button>
 							)}
-						</div>
+						</div> */}
 					</div>
 					<div className="info-container">
 						<PokemonInfo pokemonData={selectedPokemon} />

@@ -24,7 +24,8 @@ body{
     width: 90%;
     margin: auto;
     padding-top: 100px;
-    display: flex;
+    padding-bottom: 10rem;
+    display:flex;
 }
 .white-circle{
     background-color:white;
@@ -45,9 +46,9 @@ body{
     border-width: 5px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
     padding: 0 5px;
-    display: flex;
+    display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
     box-sizing: border-box;
 }
 .list-item img{
@@ -55,8 +56,11 @@ body{
     width: 90px;
     height: 90px;
 }
+.list-item h2{
+    left: 10;
+}
 .pokemon-list-container{
-    flex-basis: 43%;
+    flex-basis: 45%;
     display: grid;
     grid-gap:12px;
 }
@@ -103,6 +107,7 @@ body{
 }
 .card h2{
     font-size: 15px;
+    margin-left: 10px;
 }
 .abilities{
     text-transform: capitalize;
