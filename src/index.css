@@ -38,7 +38,7 @@ body{
 .list-item{
     width: 100%;
     height: 110px;
-    min-width: fit-content;
+    min-width: 30rem;
     background-color:#9EDEF9;
     border-radius: 4rem;
     border-style: solid;
@@ -46,9 +46,9 @@ body{
     border-width: 5px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
     padding: 0 5px;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     box-sizing: border-box;
 }
 .list-item img{
@@ -56,8 +56,11 @@ body{
     width: 90px;
     height: 90px;
 }
-.list-item h2{
-    left: 10;
+#pokemonListId {
+    flex: 0 0 130px;;
+}
+#pokemonListName {
+    flex: 0 0 130px;;
 }
 .pokemon-list-container{
     flex-basis: 45%;
@@ -107,7 +110,7 @@ body{
 }
 .card h2{
     font-size: 15px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .abilities{
     text-transform: capitalize;
@@ -134,36 +137,4 @@ body{
     text-transform: capitalize;
     font-weight: bold;
     text-align: end;
-}
-.btn-group button{
-    text-align: center;
-    min-width: 150px;
-    min-height: 50px;
-    padding: 0.3rem 0;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(197, 192, 192);
-    background-color: #84303c;
-    transition: 0.3s;
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #333;
-    border-width: 3px;
-    border: 0 10px;
-}
-button:hover {
-    background-color: #dc5366;
-    color: white;
-}
-
-#previousButton {
-    position: absolute;
-    margin-left: 10rem;
-    margin-top: 4rem;
-}
-
-#nextButton {
-    position: absolute;
-    margin-left: 20rem;
-    margin-top: 4rem;
 }

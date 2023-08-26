@@ -32,29 +32,6 @@ const LandingPage = () => {
 							allPokemon={allPokemonData}
 							setSelectedPokemon={setSelectedPokemon}
 						/>
-						{/* <div className="btn-group">
-							{pageNumber > 1 && (
-								<button
-									id="previousButton"
-									onClick={() => {
-										setPageNumber(pageNumber - 1);
-									}}
-								>
-									Previous
-								</button>
-							)}
-
-							{pageNumber < 8 && (
-								<button
-									id="nextButton"
-									onClick={() => {
-										setPageNumber(pageNumber + 1);
-									}}
-								>
-									Next
-								</button>
-							)}
-						</div> */}
 					</div>
 					<div className="info-container">
 						<PokemonInfo pokemonData={selectedPokemon} />

@@ -11,9 +11,8 @@ function Card({ pokemonData, setSelectedPokemon }) {
 			<div className="white-circle">
 				<img src={pokeball_icon} alt="pokeball" />
 			</div>
-			<h2>{pokemonData.id}</h2>
-			<br />
-			<h2>{pokemonData.name}</h2>
+			<h2 id="pokemonListId">{pokemonData.id}</h2>
+			<h2 id="pokemonListName"> {pokemonData.name}</h2>
 			<div className="white-circle">
 				<img src={pokemonData.basicSprite} alt={pokemonData.name} />
 			</div>
