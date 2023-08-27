@@ -9,7 +9,9 @@ function Card({ pokemonData, setSelectedPokemon }) {
 			}}
 		>
 			<div className="white-circle">
-				<img src={pokeball_icon} alt="pokeball" />
+				{pokemonData.caught && (
+					<img src={pokeball_icon} alt="pokeball" />
+				)}
 			</div>
 			<h2 id="pokemonListId">{pokemonData.id}</h2>
 			<h2 id="pokemonListName"> {pokemonData.name}</h2>
