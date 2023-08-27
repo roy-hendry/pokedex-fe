@@ -57,10 +57,10 @@ body{
     height: 90px;
 }
 #pokemonListId {
-    flex: 0 0 130px;;
+    flex: 0 0;
 }
 #pokemonListName {
-    flex: 0 0 130px;;
+    flex: 0 0 180px;;
 }
 .pokemon-list-container{
     flex-basis: 45%;
