@@ -1,4 +1,5 @@
 import pokeball_icon from "../assets/poke_ball_icon.svg";
+import { toggleIsCapturedState } from "../services/pokemonServices";
 
 function Card({ pokemonData, setSelectedPokemon }) {
 	return (
@@ -8,7 +9,12 @@ function Card({ pokemonData, setSelectedPokemon }) {
 				setSelectedPokemon(pokemonData);
 			}}
 		>
-			<div className="white-circle">
+			<div
+				className="white-circle"
+				onClick={() => {
+					toggleIsCapturedState(pokemonData);
+				}}
+			>
 				{pokemonData.caught && (
 					<img
 						id="pokeball-image"

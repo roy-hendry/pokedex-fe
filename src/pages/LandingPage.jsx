@@ -7,7 +7,7 @@ import pokemonLogo from "../assets/pokemon_logo.png";
 const LandingPage = () => {
 	const [loading, setLoading] = useState(true);
 	const [allPokemonData, setAllPokemonData] = useState([]);
-	const [pageNumber, setPageNumber] = useState(1);
+	// const [pageNumber, setPageNumber] = useState(1);
 	const [selectedPokemon, setSelectedPokemon] = useState();
 
 	useEffect(() => {

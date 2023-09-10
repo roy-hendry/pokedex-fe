@@ -5,3 +5,12 @@ export const getPokemonData = async () => {
 
 	return nameResponse.data;
 };
+
+export const toggleIsCapturedState = async (pokemon) => {
+	const toggleResponse = await axios.put(
+		"http://localhost:8080/api/pokemon",
+		pokemon
+	);
+
+	return toggleResponse.data;
+};
