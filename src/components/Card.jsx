@@ -1,6 +1,11 @@
 import pokeball_icon from "../assets/poke_ball_icon.svg";
 import { toggleIsCapturedState } from "../services/pokemonServices";
 
+// As of current clicking the white circle calls the backend's toggleIsCapturedState method
+// The main issue is that it doesn't reload anything
+// Ideally I would want it to instantly show the change by reloading the check to show the pokeball
+// This will most likely be done via a state change whenever the call is made locally as it will stay in sync - unless I am able to find a better way
+
 function Card({ pokemonData, setSelectedPokemon }) {
 	return (
 		<div
