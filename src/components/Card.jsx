@@ -12,8 +12,8 @@ function Card({ pokemonData, setSelectedPokemon }) {
 				setSelectedPokemon(pokemonData);
 			}}
 		>
-			<div
-				className="white-circle"
+			<button
+				className="white-pokeball-circle"
 				onClick={() => {
 					setIsCapturedState(!isCapturedState);
 					toggleIsCapturedState(pokemonData);
@@ -26,10 +26,10 @@ function Card({ pokemonData, setSelectedPokemon }) {
 						alt="pokeball"
 					/>
 				)}
-			</div>
+			</button>
 			<h2 id="pokemonListId">{pokemonData.id}</h2>
 			<h2 id="pokemonListName"> {pokemonData.name}</h2>
-			<div className="white-circle">
+			<div className="white-pokemon-circle">
 				<img
 					id="pokemon-list-image"
 					src={pokemonData.basicSprite}

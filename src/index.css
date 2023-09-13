@@ -27,7 +27,7 @@ body{
     padding-bottom: 10rem;
     display:flex;
 }
-.white-circle{
+.white-pokemon-circle{
     background-color:white;
     width: 95px;
     height: 95px;
@@ -35,10 +35,25 @@ body{
     min-height:fit-content;
     border-radius: 5rem;
 }
+.white-pokeball-circle{
+    background-color:white;
+    width: 80px;
+    height: 80px;
+    border-radius: 5rem;
+    margin-left: 5px;
+    outline:10px;
+    border-width: 4px;
+    /* border:none; */
+    /* box-shadow: 10px; */
+}
+.white-pokeball-circle:hover {
+    box-shadow: 10px 12px 12px 0 rgba(0,0,0,0.40);
+    transition-duration: 0.2s;
+  }
 #pokeball-image{
-    padding: 2.5px;
-    width: 90px;
-    height: 90px;
+    padding: 1px;
+    width: 70px;
+    height: 70px;
 }
 #pokemon-list-image{
     padding-top: 6px;
