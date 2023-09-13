@@ -13,7 +13,7 @@ const LandingPage = () => {
 	useEffect(() => {
 		getPokemonData().then((response) => {
 			setAllPokemonData(response);
-			setSelectedPokemon(response[2]);
+			setSelectedPokemon(response[0]);
 			setLoading(false);
 		});
 
