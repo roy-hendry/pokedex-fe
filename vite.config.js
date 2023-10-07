@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react";
-import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
@@ -13,10 +12,9 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: "jsdom",
-		setupFiles: "./setupTests.js",
+		setupFiles: "./jest.setup.js",
 	},
 	plugins: [
-		react(),
 		reactRefresh(),
 		svgrPlugin({
 			svgrOptions: {
