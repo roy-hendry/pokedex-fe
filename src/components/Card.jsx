@@ -28,7 +28,7 @@ function Card({ pokemonData, setSelectedPokemon }) {
 				)}
 			</button>
 			<h2 id="pokemonListId">{pokemonData.id}</h2>
-			<h2 id="pokemonListName"> {pokemonData.name}</h2>
+			<h2 id="pokemonListName">{pokemonData.name}</h2>
 			<div className="white-pokemon-circle">
 				<img
 					id="pokemon-list-image"

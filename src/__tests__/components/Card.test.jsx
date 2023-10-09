@@ -1,18 +1,15 @@
 import Card from "../../components/Card";
-import { it, describe, expect, test } from "vitest";
+import { it, describe, expect, test, beforeEach } from "vitest";
 import {
 	render,
 	fireEvent,
 	screen,
 	waitFor,
 	getByText,
+	getByAltText,
 } from "@testing-library/react";
 
-it("The test runs", () => {
-	expect(true).toBe(true);
-});
-
-describe("GIVEN Pokemon data; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
+describe("GIVEN Pokemon data with a true isCaptured state; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
 	const pokemonTestData = {
 		id: 1,
 		name: "Bulbasaur",
@@ -41,43 +38,13 @@ describe("GIVEN Pokemon data; WHEN we have rendered PokemonInfo; THEN it's field
 		expect(screen.getByText("Bulbasaur")).toBeInTheDocument();
 	});
 
-	// it("Ability1", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Overgrow")).toBeInTheDocument();
-	// });
+	it("Alt pokemon image name", () => {
+		render(<Card pokemonData={pokemonTestData} />);
+		expect(screen.getByAltText("Bulbasaur")).toBeInTheDocument();
+	});
 
-	// it("Ability2", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Chlorophyll")).toBeInTheDocument();
-	// });
-
-	// it("HP", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("HP: 045")).toBeInTheDocument();
-	// });
-
-	// it("Attack", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Attack: 049")).toBeInTheDocument();
-	// });
-
-	// it("Defence", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Defence: 049")).toBeInTheDocument();
-	// });
-
-	// it("Special-Attack", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Special-Attack: 065")).toBeInTheDocument();
-	// });
-
-	// it("Special-Defence", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Special-Defence: 065")).toBeInTheDocument();
-	// });
-
-	// it("Speed", () => {
-	// 	render(<PokemonInfo pokemonData={pokemonTestData} />);
-	// 	expect(screen.getByText("Speed: 045")).toBeInTheDocument();
-	// });
+	it("Alt pokeball image name", () => {
+		render(<Card pokemonData={pokemonTestData} />);
+		expect(screen.getByAltText("pokeball")).toBeInTheDocument();
+	});
 });
