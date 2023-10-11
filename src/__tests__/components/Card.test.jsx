@@ -9,7 +9,7 @@ import {
 	getByAltText,
 } from "@testing-library/react";
 
-describe("GIVEN Pokemon data with a true isCaptured state; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
+describe("GIVEN Pokemon data with a true captured state; WHEN the pokemon Card is rendered; THEN the following elements will be shown", () => {
 	const pokemonTestData = {
 		id: 1,
 		name: "Bulbasaur",
@@ -47,4 +47,29 @@ describe("GIVEN Pokemon data with a true isCaptured state; WHEN we have rendered
 		render(<Card pokemonData={pokemonTestData} />);
 		expect(screen.getByAltText("pokeball")).toBeInTheDocument();
 	});
+});
+
+it("GIVEN Pokemon data with a false captured state; WHEN the pokemon Card is rendered; THEN the pokeball icon won't be shown", () => {
+	const pokemonTestData = {
+		id: 1,
+		name: "Bulbasaur",
+		basicSprite:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+		detailedSprite:
+			"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+		abilityName1: "Overgrow",
+		abilityName2: "Chlorophyll",
+		hp: 45,
+		attack: 49,
+		defence: 49,
+		specialAttack: 65,
+		specialDefence: 65,
+		speed: 45,
+		caught: false,
+	};
+
+	const card = render(<Card pokemonData={pokemonTestData} />);
+	const pokeballImage = card.container.querySelector("#pokeball-image");
+
+	expect(pokeballImage).not.toBeInTheDocument();
 });
