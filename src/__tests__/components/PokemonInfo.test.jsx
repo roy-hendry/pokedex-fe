@@ -12,7 +12,7 @@ it("The test runs", () => {
 	expect(true).toBe(true);
 });
 
-describe("GIVEN Pokemon data; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
+describe("GIVEN Pokemon data with two abilities; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
 	const pokemonTestData = {
 		id: 1,
 		name: "Bulbasaur",
@@ -80,4 +80,31 @@ describe("GIVEN Pokemon data; WHEN we have rendered PokemonInfo; THEN it's field
 		render(<PokemonInfo pokemonData={pokemonTestData} />);
 		expect(screen.getByText("Speed: 045")).toBeInTheDocument();
 	});
+});
+
+it("WHEN rendering PokemonInfo; GIVEN Pokemon data with only one ability; THEN only one ability will be shown", () => {
+	const pokemonTestData = {
+		id: 11,
+		name: "Metapod",
+		basicSprite:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+		detailedSprite:
+			"https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png",
+		abilityName1: "Shed-skin",
+		abilityName2: null,
+		hp: 50,
+		attack: 20,
+		defence: 55,
+		specialAttack: 25,
+		specialDefence: 25,
+		speed: 30,
+		caught: false,
+	};
+
+	const pokemonInfo = render(<PokemonInfo pokemonData={pokemonTestData} />);
+
+	const abilityNameTwo =
+		pokemonInfo.container.getElementsByClassName("group");
+
+	expect(abilityNameTwo.length).toBe(1);
 });
