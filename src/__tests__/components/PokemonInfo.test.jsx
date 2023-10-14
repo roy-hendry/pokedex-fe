@@ -8,10 +8,6 @@ import {
 	getByText,
 } from "@testing-library/react";
 
-it("The test runs", () => {
-	expect(true).toBe(true);
-});
-
 describe("GIVEN Pokemon data with two abilities; WHEN we have rendered PokemonInfo; THEN it's fields will be shown", () => {
 	const pokemonTestData = {
 		id: 1,
