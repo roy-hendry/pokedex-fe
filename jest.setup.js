@@ -3,8 +3,8 @@ import { server } from "./src/mocks/server.jsx";
 import { afterAll, beforeAll } from "vitest";
 
 console.log("-0-0-0-0-0-0-0-0-0-0-0-0-0");
-// beforeAll(() => server.listen());
+beforeAll(() => server.listen());
 
-// afterEach(() => server.resetHandlers());
+afterEach(() => server.resetHandlers());
 
-// afterAll(() => server.close());
+afterAll(() => server.close());
