@@ -50,6 +50,9 @@ body{
     box-shadow: 10px 12px 12px 0 rgba(0,0,0,0.40);
     transition-duration: 0.2s;
   }
+button:focus {
+    background: red;
+  }
 #pokeball-image{
     padding: 1px;
     width: 70px;
